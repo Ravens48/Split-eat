@@ -15,7 +15,8 @@ struct BillsView: View {
                 .fontWeight(.bold)
             HStack(alignment: .lastTextBaseline){
                 Text("$")
-                Text(calculatorModel.roundedValueToString(value: calculatorModel.totalPerPerson))
+                Text(String(format: "%.2f", calculatorModel.totalPerPerson))
+//                Text(calculatorModel.roundedValueToString(value: calculatorModel.totalPerPerson))
                     .font(.system(size: 36))
             }
             .fontWeight(.black)
@@ -45,8 +46,9 @@ struct BillsView: View {
             }.padding(10)
         }
         .padding(20)
-        .background(.white)
+        .background(.gray.opacity(0.2))
         .cornerRadius(20)
+
     }
 }
 

@@ -24,6 +24,10 @@ class CalculatorModel: ObservableObject {
         self.totalPerPerson = (self.totalBillsValue + (self.totalBillsValue * self.percentsOfTips)) / Float(nbPersonToSplit)
     }
     
+    func calculateTipsValue() -> Void {
+        self.totalValueTips = self.totalBillsValue * self.percentsOfTips
+    }
+    
     func resetAllValue() -> Void {
         self.totalBillsValue = 0
         self.nbPersonToSplit = 1

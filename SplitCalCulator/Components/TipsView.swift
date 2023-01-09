@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TipsView: View {
     @ObservedObject var calculatorModel:CalculatorModel
+
     var body: some View {
         GeometryReader { gp in
             HStack(alignment: .top) {
@@ -24,7 +25,7 @@ struct TipsView: View {
                         TipsCell(calculatorModel: calculatorModel, valueTips: 0.20, amountLabel: "20%")
                         TipsCell(calculatorModel: calculatorModel, valueTips: 0.30, amountLabel: "30%")
                     }
-                    TipsCustom(amountLabel: "Custom tip")
+                    TipsCustom(calculatorModel: calculatorModel, amountLabel: "Custom tip")
                 }
                 .frame(minWidth: 0, maxWidth: gp.size.width * 0.8)
             }

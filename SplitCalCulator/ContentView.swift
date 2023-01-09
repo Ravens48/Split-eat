@@ -28,7 +28,7 @@ struct ContentView: View {
         .padding(20)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
 //        .padding()
-        .background(.gray.opacity(0.2))
+        .environmentObject(calculatorModel)
     }
 
 }
@@ -64,15 +64,15 @@ struct InputBillView: View {
                         }
                         .multilineTextAlignment(.center)
                         .frame(height: 55)
-                        .background(.white)
                         .textFieldStyle(PlainTextFieldStyle())
 
                     
                 }
-                .background(.white)
+                .background(.gray.opacity(0.2))
                 .cornerRadius(12)
                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 0).foregroundColor(Color.black))
                 .frame(minWidth: 0, maxWidth: gp.size.width * 0.8)
+
             }
             .padding(.vertical, 20)
         }
@@ -80,9 +80,14 @@ struct InputBillView: View {
 }
 
 struct TipsCustom:View {
+    @ObservedObject var calculatorModel:CalculatorModel
+    @State private var showingSheet = false
     var amountLabel:String
     var body: some View {
-        Button(amountLabel, action: {print("clique")})
+        Button(amountLabel, action:{            showingSheet.toggle()})
+        .sheet(isPresented: $showingSheet) {
+            CustomTipsSheetView(calculatorModel: calculatorModel)
+        }
         .foregroundColor(.white)
         .frame(minWidth: 0, maxWidth: .infinity)
         .padding(15)
@@ -141,7 +146,7 @@ struct SplitterView:View {
                             .multilineTextAlignment(.center)
                             .frame(minWidth: 0, maxWidth: .infinity)
                             .frame(height: 55)
-                            .background(.white)
+                            .background(.gray.opacity(0.2))
                             .textFieldStyle(PlainTextFieldStyle())
                             .cornerRadius(12)
 
