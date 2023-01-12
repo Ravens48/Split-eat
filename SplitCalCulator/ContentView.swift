@@ -91,6 +91,7 @@ struct TipsCustom:View {
         .foregroundColor(.white)
         .frame(minWidth: 0, maxWidth: .infinity)
         .padding(15)
+        .font(.system(size: 16, weight: .bold))
         .background(Color("primaryColor"))
         .cornerRadius(12)
     }
@@ -108,6 +109,7 @@ struct TipsCell:View {
         })
         .foregroundColor(.white)
         .padding(15)
+        .font(.system(size: 16, weight: .bold))
         .background(Color("primaryColor"))
         .cornerRadius(12)
     }
@@ -139,6 +141,7 @@ struct SplitterView:View {
                         .foregroundColor(.white)
                         .frame(minWidth: 0, maxWidth: 35)
                         .padding()
+                        .font(.system(size: 20, weight: .bold))
                         .background(Color("primaryColor"))
                         .cornerRadius(12)
                         
@@ -160,6 +163,7 @@ struct SplitterView:View {
                         .foregroundColor(.white)
                         .frame(minWidth: 0, maxWidth: 35)
                         .padding(15)
+                        .font(.system(size: 20, weight: .bold))
                         .background(Color("primaryColor"))
                         .cornerRadius(12)
                     }
