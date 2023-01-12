@@ -19,15 +19,19 @@ struct TipsView: View {
                     Text("your tips")
                 }
                 .frame(minWidth: 0, maxWidth: gp.size.width * 0.2)
-                VStack {
-                    HStack(spacing:35) {
-                        TipsCell(calculatorModel: calculatorModel, valueTips: 0.10, amountLabel: "10%" )
+                VStack(alignment: .leading) {
+                    HStack() {
+                        TipsCell(calculatorModel: calculatorModel, valueTips: 0.10, amountLabel: "10%")
+                        Spacer()
                         TipsCell(calculatorModel: calculatorModel, valueTips: 0.20, amountLabel: "20%")
+                        Spacer()
                         TipsCell(calculatorModel: calculatorModel, valueTips: 0.30, amountLabel: "30%")
                     }
+//                    .frame(minWidth: 0, maxWidth: .infinity)
                     TipsCustom(calculatorModel: calculatorModel, amountLabel: "Custom tip")
                 }
                 .frame(minWidth: 0, maxWidth: gp.size.width * 0.8)
+
             }
             .padding(.vertical, 10.0)
         }

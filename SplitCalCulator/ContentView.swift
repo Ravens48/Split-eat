@@ -27,6 +27,7 @@ struct ContentView: View {
         }
         .padding(20)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .ignoresSafeArea(.keyboard, edges: .bottom)
 //        .padding()
         .environmentObject(calculatorModel)
     }
@@ -91,7 +92,7 @@ struct TipsCustom:View {
         .foregroundColor(.white)
         .frame(minWidth: 0, maxWidth: .infinity)
         .padding(15)
-        .font(.system(size: 16, weight: .bold))
+        .font(.system(size: 17, weight: .bold))
         .background(Color("primaryColor"))
         .cornerRadius(12)
     }
